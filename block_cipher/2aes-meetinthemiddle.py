@@ -10,7 +10,7 @@ def build_hashtable(hashtable, plaintext):
         k_1 = key.to_bytes(16, "big") 
         ci = AES.new(k_1,AES.MODE_ECB)
         k1_encrypted_plaintext = ci.encrypt(plaintext)
-        # hashtable[k_1] = k1_encrypted_plaintext
+        
         # We store the E(k_1, m) as key with k_1 as value to read the value later on easier.
         hashtable[k1_encrypted_plaintext] = k_1
 
@@ -36,6 +36,8 @@ def main():
 
     # 1. Build hashtable
     build_hashtable(hashtable, p1)
+
+    # 2. Brute key backwards
     brute_c(hashtable, c1)
 
 if __name__ == "__main__":
