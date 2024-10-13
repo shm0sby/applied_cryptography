@@ -26,7 +26,6 @@ def brute(plaintext, ciphertext):
 
 
 def main():
-
     # We know the following text and cipher text
     p1 = b'Das ist ein Test'
     c1 = bytes.fromhex('68a9df14210b1f79aee2e61da467da17')
